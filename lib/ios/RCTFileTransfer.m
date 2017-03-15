@@ -101,10 +101,7 @@ RCT_EXPORT_METHOD(upload:(NSDictionary *)input callback:(RCTResponseSenderBlock)
   NSString *mimeType = input[@"mimeType"];
   NSString *uploadUrl = input[@"uploadUrl"];
   NSString *fileKey = input[@"fileKey"];
-  NSString *HTTPMethod = input[@"HTTPMethod"];
-
   if (!fileKey) fileKey = @"file";
-  if (!HTTPMethod) HTTPMethod = @"POST";
 
   NSDictionary* requestData = [input objectForKey:@"data"];
   NSDictionary* requestHeaders = [input objectForKey:@"headers"];
@@ -125,7 +122,7 @@ RCT_EXPORT_METHOD(upload:(NSDictionary *)input callback:(RCTResponseSenderBlock)
   NSURL* url = [NSURL URLWithString:server];
   NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:url];
 
-  [req setHTTPMethod:HTTPMethod];
+  [req setHTTPMethod:@"POST"];
 
   NSString* formBoundaryString = @"----react.file.transfer.form.boundary";
 
