@@ -102,7 +102,7 @@ RCT_EXPORT_METHOD(upload:(NSDictionary *)input callback:(RCTResponseSenderBlock)
   NSString *uploadUrl = input[@"uploadUrl"];
   NSString *fileKey = input[@"fileKey"];
   NSString *HTTPMethod = input[@"HTTPMethod"];
-    
+
   if (!fileKey) fileKey = @"file";
   if (!HTTPMethod) HTTPMethod = @"POST";
 
